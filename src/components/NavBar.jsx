@@ -9,15 +9,19 @@ import {
 import { Link } from "react-scroll";
 import { HiOutlineMail } from "react-icons/hi";
 import { BsFillPersonLinesFill } from "react-icons/bs";
+import resume from "../assets/FB_Resume.pdf";
 const NavBar = () => {
   const [nav, setNav] = useState(false);
   const handleClick = () => setNav(!nav);
   return (
     <div className="fixed w-full h-[80px] flex justify-between items-center px-4 bg-[#0a192f] text-gray-300">
       <div>
-        <h2 className="cursor-pointer">
-          FLAV <span className="text-pink-600">DEV</span>
-        </h2>
+        <Link to="home" smooth={true} duration={500}>
+          {" "}
+          <h2 className="cursor-pointer">
+            FLAV <span className="text-pink-600">DEV</span>
+          </h2>
+        </Link>
       </div>
       {/* {Menu} */}
 
@@ -94,7 +98,8 @@ const NavBar = () => {
           <li className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-blue-600">
             <a
               className="flex justify-between items-center w-full text-gray-300 "
-              href=""
+              href="https://www.linkedin.com/in/flavius-bejan/ "
+              target="_blank"
             >
               Linkedin <FaLinkedin size={30} />
             </a>
@@ -102,23 +107,28 @@ const NavBar = () => {
           <li className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#333333]">
             <a
               className="flex justify-between items-center w-full text-gray-300 "
-              href=""
+              href="https://github.com/Beji96"
+              target="_blank"
             >
               GitHub <FaGithub size={30} />
             </a>
           </li>
-          <li className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#6fc2b0]">
-            <a
-              className="flex justify-between items-center w-full text-gray-300 "
-              href=""
-            >
-              Email <HiOutlineMail size={30} />
-            </a>
-          </li>
+          <Link to="contact" smooth={true} duration={500}>
+            {" "}
+            <li className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#6fc2b0]">
+              <a
+                className="flex justify-between items-center w-full text-gray-300 "
+                href=""
+              >
+                Email <HiOutlineMail size={30} />
+              </a>
+            </li>
+          </Link>
           <li className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#565f69]">
             <a
               className="flex justify-between items-center w-full text-gray-300 "
-              href=""
+              href={resume}
+              download="Resume"
             >
               Resume <BsFillPersonLinesFill size={30} />
             </a>
